@@ -47,7 +47,6 @@ import TermsAndConditions from './TermsAndConditions/TermsAndConditions';
 import NonprofitCloud from './ServiceComponents/NonprofitCloud/NonprofitCloud';
 import AgentforceAI from './BlogsComponents/AgentforceAI/AgentforceAI';
 import SaasAiHome from './pages/Home/SaasAiHome';
-import { Helmet } from 'react-helmet';
 
 // home page condition
 import brand from "../src/config/brand";
@@ -65,8 +64,7 @@ function App() {
   // code for favicon 
 
   useEffect(() => {
-
-    document.title = brand.title;
+    // Note: Remove document.title = brand.title; as it overrides page-specific titles set by SEO components
     const existingFavicons = document.querySelectorAll("link[rel*='icon']");
     existingFavicons.forEach(icon => icon.remove());
 
@@ -100,14 +98,6 @@ function App() {
 
   return (
     <>
-      <Helmet>
-        <title>CODM Software Limited | Top Salesforce Partner</title>
-        <meta
-          name="description"
-          content="CODM Software provides custom software development, Salesforce consulting, AI solutions, and enterprise applications."
-        />
-      </Helmet>
-
       <ScrollOnTop />
       useAutoRefresh()
 
